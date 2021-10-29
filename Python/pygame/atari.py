@@ -1,9 +1,9 @@
-#############################
-#  Andrés David Maya Getial #
-#     Ing de sistemas 6A    #
-#        cod  i033119       #
-#        VIDEOJUEGOS        #
-#############################
+ ############################
+#  Andrés David Maya Getial  #
+#     Ing de sistemas 6A     #
+#        cod  i033119        #
+#        VIDEOJUEGOS         #
+ ############################
 
 #Importar librerias
 import sys
@@ -19,9 +19,13 @@ pygame.init()
 
 #sonidos-music videogame
 
+#Cada vez que la Bola elimine un ladrillo debe sonar/emitir un sonido.
 romperladrillos = pygame.mixer.Sound("music/romper.wav")
-gameover=pygame.mixer.Sound("music/verguenza.wav")
+# Cuando la bola choque con el piso, debe sonar/emitir un sonido.
 rebote=pygame.mixer.Sound("music/rebote.wav")
+#Cuando el jugador pierda todas las vidas debe activarse/emitir un sonido de "Gameover".
+gameover=pygame.mixer.Sound("music/verguenza.wav")
+
 
 
 pygame.mixer.music.load("music/romper.wav")
@@ -73,10 +77,6 @@ class Brick(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.topleft = position
 
-
-
-
-
 class Wall(pygame.sprite.Group):
     def __init__(self, totalBricks):
         pygame.sprite.Group.__init__(self)
@@ -94,7 +94,7 @@ class Wall(pygame.sprite.Group):
 
 
 def game_over():
-    msg = "Game Over"
+    msg = "Game Over "
     text_color = (63, 74, 106)
     text_style = pygame.font.SysFont('Arial',40) #(Tipo de letra, Tamaño)
     txt_screen = text_style.render(msg,True,text_color)
@@ -139,7 +139,7 @@ HEIGHT = 480
 #WIDTH = ?
 #HEIGHT = ?
 
-BG_COLOR = (4, 152, 231) # (Red, Green, Blue)
+BG_COLOR = (227, 147, 16 ) # (Red, Green, Blue)
 
 screen = pygame.display.set_mode( (WIDTH,  HEIGHT) )
 pygame.display.set_caption('Atari')
